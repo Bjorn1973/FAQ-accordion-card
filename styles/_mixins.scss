@@ -1,0 +1,20 @@
+@mixin font() {
+  font-family: Kumbh Sans;
+  font-size: 12px;
+  font-weight: 400;
+  color: $font-vd-blue;
+}
+
+@mixin bold_font() {
+  font-family: Kumbh Sans;
+  font-size: 12px;
+  font-weight: 700;
+  color: $font-vd-blue;
+}
+
+@mixin answer_font() {
+  font-family: Kumbh Sans;
+  font-size: 12px;
+  font-weight: 400;
+  color: $font-dark-grayish-blue;
+}
