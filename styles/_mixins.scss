@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 @mixin font() {
   font-family: Kumbh Sans;
   font-size: 12px;
