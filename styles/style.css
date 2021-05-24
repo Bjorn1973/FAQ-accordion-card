@@ -12,6 +12,10 @@
   width: 100%;
   height: auto;
 } */
+html {
+  font-size: 62.5%;
+}
+
 html,
 body,
 div,
@@ -155,9 +159,10 @@ table {
 body {
   width: 100%;
   max-width: 1440px;
-  height: 100%;
-  max-height: 770px;
+  height: auto;
   background-image: linear-gradient(#af67e9, #6565e7);
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0 auto;
   padding: 130px 260px;
   z-index: 1;
@@ -167,51 +172,99 @@ body {
   width: 100%;
   max-width: 920px;
   height: 100%;
-  max-height: 510px;
+  min-height: 510px;
   background-color: #fff;
-  margin: 0 auto;
   border-radius: 20px;
   display: flex;
 }
-
-div.image {
+.container div.image {
   width: 43%;
+  height: auto;
+  max-height: 510px;
   position: relative;
 }
-div.image img {
+.container div.image .wrapper {
+  width: 100%;
+  max-width: 395px;
+  height: auto;
+  max-height: 510px;
+  overflow: hidden;
+}
+.container div.image .wrapper img {
   display: block;
 }
-div.image img.woman {
+.container div.image .wrapper img.woman {
   position: absolute;
   left: -80px;
   top: 70px;
   z-index: 1;
+  clip: rect(0px, 480px, 510px, 80px);
 }
-div.image img.pattern {
+.container div.image .wrapper img.pattern {
   position: absolute;
-  left: -590px;
-  top: -300px;
+  left: -560px;
+  top: -289px;
   z-index: 0;
+  clip: rect(289px, 1185px, 855px, 559px);
 }
-div.image img.box {
+.container div.image img.box {
+  display: block;
   position: absolute;
-  left: -98px;
+  left: -95px;
   top: 200px;
   z-index: 2;
 }
-
-div.content {
+.container div.content {
   width: 57%;
   padding: 60px 80px 80px 80px;
-  display: flex;
-  flex-wrap: wrap;
 }
-div.content h1 {
+.container div.content h1 {
   font-family: Kumbh Sans;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #1d1e35;
   font-size: 24px;
+  padding-top: 10px;
+}
+.container div.content .question {
+  font-family: Kumbh Sans;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #1d1e35;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  height: 50px;
+  line-height: 12px;
+}
+.container div.content .question:hover {
+  color: #f47c57;
+  cursor: pointer;
+  transition: all, 300ms;
+}
+.container div.content .question:active {
+  color: #4a4b5e;
+  font-weight: 700;
+}
+.container div.content .question__answer {
+  display: none;
+  font-family: Kumbh Sans;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #787887;
+  line-height: 17px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.container div.content .question__answer::after {
+  display: block;
+  content: "";
+  background-color: #e7e7e9;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
