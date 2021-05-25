@@ -66,34 +66,35 @@ body {
   div.content {
     width: 57%;
     padding: 60px 80px 80px 80px;
-    overflow-y: scroll;
+
     h1 {
       @include bold_font();
       font-size: 24px;
       padding-top: 10px;
-      padding-bottom: 45px;
+      padding-bottom: 25px;
     }
     .question {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-content: center;
-
+      &::after {
+        display: block;
+        content: "";
+        background-color: $div-light-grayish-blue;
+        width: 100%;
+        height: 1px;
+      }
       a.question__title {
         @include font();
         text-decoration: none;
-        position: relative;
+        padding-top: 20px;
         display: block;
         height: 50px;
         line-height: 12px;
-        &::after {
-          display: block;
-          content: "";
-          background-color: $div-light-grayish-blue;
-          width: 100%;
-          height: 1px;
-          position: absolute;
-          bottom: -20px;
+        &--view {
+          color: $font-vd-grayish-blue;
+          font-weight: 700;
         }
         &:hover {
           color: $font-soft-red;
@@ -105,13 +106,22 @@ body {
           font-weight: 700;
         }
       }
+      a.question__icon {
+        padding-top: 15px;
+        &--view {
+          transform: rotate(180deg);
+        }
+      }
     }
     .question__answer {
-      display: block;
+      display: none;
       @include answer_font();
       line-height: 17px;
       padding-bottom: 20px;
       position: relative;
+      &--view {
+        display: block;
+      }
     }
   }
 }
