@@ -92,7 +92,8 @@ body {
         display: block;
         height: 50px;
         line-height: 12px;
-        &--view {
+        transition: all, 300ms;
+        &.--view {
           color: $font-vd-grayish-blue;
           font-weight: 700;
         }
@@ -101,15 +102,13 @@ body {
           cursor: pointer;
           transition: all, 300ms;
         }
-        &:active {
-          color: $font-vd-grayish-blue;
-          font-weight: 700;
-        }
       }
       a.question__icon {
         padding-top: 15px;
-        &--view {
+        transition: all, 300ms;
+        &.--view {
           transform: rotate(180deg);
+          transition: all 300ms;
         }
       }
     }
@@ -119,7 +118,8 @@ body {
       line-height: 17px;
       padding-bottom: 20px;
       position: relative;
-      &--view {
+      transition: all, 300ms;
+      &.--view {
         display: block;
       }
     }
