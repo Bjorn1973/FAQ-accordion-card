@@ -15,8 +15,7 @@
 body {
   width: 100%;
   max-width: 1440px;
-  height: auto;
-  //   max-height: 770px;
+  height: 100vh;
   background-image: linear-gradient($bgc-soft-violet, $bgc-soft-blue);
   background-size: cover;
   background-repeat: no-repeat;
@@ -27,9 +26,9 @@ body {
 
 .container {
   width: 100%;
-  max-width: 920px;
+  max-width: 925px;
   height: 100%;
-  min-height: 510px;
+  max-height: 510px;
   background-color: #fff;
   border-radius: 20px;
   display: flex;
@@ -66,6 +65,7 @@ body {
   div.content {
     width: 57%;
     padding: 60px 80px 80px 80px;
+    overflow: auto;
 
     h1 {
       @include bold_font();
@@ -78,14 +78,16 @@ body {
       flex-wrap: wrap;
       justify-content: space-between;
       align-content: center;
+      height: fit-content;
       &::after {
+        visibility: visible;
         display: block;
         content: "";
         background-color: $div-light-grayish-blue;
         width: 100%;
         height: 1px;
       }
-      a.question__title {
+      h2.question__title {
         @include font();
         text-decoration: none;
         padding-top: 20px;
@@ -93,7 +95,7 @@ body {
         height: 50px;
         line-height: 12px;
         transition: all, 300ms;
-        &.--view {
+        &--view {
           color: $font-vd-grayish-blue;
           font-weight: 700;
         }
@@ -103,24 +105,34 @@ body {
           transition: all, 300ms;
         }
       }
-      a.question__icon {
-        padding-top: 15px;
+      img.question__icon {
+        display: block;
+        width: 15px;
+        height: 10px;
+        cursor: pointer;
+        margin-top: 20px;
+        padding-left: 2px;
+        padding-right: 2px;
         transition: all, 300ms;
-        &.--view {
+        &--view {
           transform: rotate(180deg);
-          transition: all 300ms;
         }
       }
     }
     .question__answer {
       display: none;
+      width: 345px;
+      height: 50px;
       @include answer_font();
       line-height: 17px;
       padding-bottom: 20px;
       position: relative;
       transition: all, 300ms;
-      &.--view {
+      visibility: hidden;
+      &--view {
         display: block;
+        visibility: visible;
+        max-height: auto;
       }
     }
   }

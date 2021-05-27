@@ -15,6 +15,6 @@
 .DS_Store
 
 .prettierignore
-./design
-./images
+/design
+/images
 .surgeignore

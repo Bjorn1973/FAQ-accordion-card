@@ -159,7 +159,7 @@ table {
 body {
   width: 100%;
   max-width: 1440px;
-  height: auto;
+  height: 100vh;
   background-image: linear-gradient(#af67e9, #6565e7);
   background-size: cover;
   background-repeat: no-repeat;
@@ -170,9 +170,9 @@ body {
 
 .container {
   width: 100%;
-  max-width: 920px;
+  max-width: 925px;
   height: 100%;
-  min-height: 510px;
+  max-height: 510px;
   background-color: #fff;
   border-radius: 20px;
   display: flex;
@@ -209,10 +209,11 @@ body {
 .container div.content {
   width: 57%;
   padding: 60px 80px 80px 80px;
+  overflow: auto;
 }
 .container div.content h1 {
   font-family: Kumbh Sans;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #1d1e35;
   font-size: 24px;
@@ -224,17 +225,19 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
+  height: fit-content;
 }
 .container div.content .question::after {
+  visibility: visible;
   display: block;
   content: "";
   background-color: #e7e7e9;
   width: 100%;
   height: 1px;
 }
-.container div.content .question a.question__title {
+.container div.content .question h2.question__title {
   font-family: Kumbh Sans;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #1d1e35;
   text-decoration: none;
@@ -244,36 +247,46 @@ body {
   line-height: 12px;
   transition: all, 300ms;
 }
-.container div.content .question a.question__title.--view {
+.container div.content .question h2.question__title--view {
   color: #4a4b5e;
   font-weight: 700;
 }
-.container div.content .question a.question__title:hover {
+.container div.content .question h2.question__title:hover {
   color: #f47c57;
   cursor: pointer;
   transition: all, 300ms;
 }
-.container div.content .question a.question__icon {
-  padding-top: 15px;
+.container div.content .question img.question__icon {
+  display: block;
+  width: 15px;
+  height: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  padding-left: 2px;
+  padding-right: 2px;
   transition: all, 300ms;
 }
-.container div.content .question a.question__icon.--view {
+.container div.content .question img.question__icon--view {
   transform: rotate(180deg);
-  transition: all 300ms;
 }
 .container div.content .question__answer {
   display: none;
+  width: 345px;
+  height: 50px;
   font-family: Kumbh Sans;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #787887;
   line-height: 17px;
   padding-bottom: 20px;
   position: relative;
   transition: all, 300ms;
+  visibility: hidden;
 }
-.container div.content .question__answer.--view {
+.container div.content .question__answer--view {
   display: block;
+  visibility: visible;
+  max-height: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
